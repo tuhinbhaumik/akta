@@ -1,0 +1,17 @@
+__pycache__
+*.pyc
+*.pyo
+.env
+.ports.json
+db/akta.db
+uploads/*
+!uploads/.gitkeep
+.git
+.github
+.claude
+*.md
+!requirements.txt
+deploy/
+.venv
+venv
+node_modules

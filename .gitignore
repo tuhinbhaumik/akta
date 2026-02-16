@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+
+# Database
+db/*.db
+*.db
+
+# Uploads
+uploads/sow/*
+uploads/upt/*
+uploads/resource_loading/*
+!uploads/sow/.gitkeep
+!uploads/upt/.gitkeep
+!uploads/resource_loading/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/
+
+# Port detection
+.ports.json
