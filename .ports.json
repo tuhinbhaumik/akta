@@ -1,0 +1,5 @@
+{
+  "backend_port": 9000,
+  "frontend_port": 8501,
+  "api_base": "http://localhost:9000"
+}
