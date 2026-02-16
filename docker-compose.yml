@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  akta:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: akta-app
+    ports:
+      - "${BACKEND_PORT:-9000}:9000"
+      - "${FRONTEND_PORT:-8501}:8501"
+    environment:
+      - API_BASE=http://localhost:9000
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - MISTRAL_API_URL=${MISTRAL_API_URL:-http://host.docker.internal:11434}
+      - SECRET_KEY=${SECRET_KEY:-akta-docker-secret-change-in-production}
+      - BACKEND_PORT=9000
+      - FRONTEND_PORT=8501
+    volumes:
+      - akta-uploads:/app/uploads
+      - akta-db:/app/db
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  akta-uploads:
+  akta-db:
